@@ -11,20 +11,7 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (e) => {
-    console.log(e.target.email)
-//     const auth = getAuth();
-// createUserWithEmailAndPassword(auth, e.target, password)
-//   .then((userCredential) => {
-//     // Signed in 
-//     const user = userCredential.user;
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     // ..
-//   });
-
+    console.log(e)
   };
   return (
     <div className="min-h-screen bg-yellow-700 flex justify-center items-center">
