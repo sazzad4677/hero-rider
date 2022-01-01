@@ -4,7 +4,7 @@
 
 - `Website Link:` [https://hero-rider-bd.netlify.app](https://hero-rider-bd.netlify.app)
 - `Frontend Repo Link:` [https://github.com/sazzad4677/hero-rider](https://github.com/sazzad4677/hero-rider)
-- `Frontend Dashboard Link:` [https://github.com/sazzad4677/hero-rider](https://github.com/sazzad4677/hero-rider/dashboard)
+- `Frontend Dashboard Link:` [https://github.com/sazzad4677/hero-rider/dashboard](https://github.com/sazzad4677/hero-rider/dashboard)
 - `Backend Repo Link:` [https://github.com/sazzad4677/hero-rider-backend](https://github.com/sazzad4677/hero-rider-backend)
 
 ## About & Features
