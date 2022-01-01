@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
+// import "./components/Authentication/firebaseConfig/firebase.config";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 

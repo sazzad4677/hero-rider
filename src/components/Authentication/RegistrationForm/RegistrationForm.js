@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
@@ -13,7 +14,15 @@ const RegistrationForm = () => {
   password.current = watch("password", "");
   const userType = watch("userType");
   const vehicleType = watch("vehicleType");
-  const onSubmit = (data) => console.log(data);
+  const nid = watch("nid");
+  console.log(nid);
+  const onSubmit = (data) => {
+    axios
+      .post(`http://localhost:5000/api/user/register`, data)
+      .then((response) => {
+        console.log(response);
+      });
+  };
   return (
     <div className="min-h-screen bg-yellow-700 flex justify-center items-center">
       <div className="absolute w-60 h-60 rounded-xl bg-purple-300 -top-5 -left-16 z-0 transform rotate-45 hidden md:block"></div>

@@ -23,7 +23,7 @@ const Header = () => {
               to="/"
               aria-label="Our product"
               title="Our product"
-              class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-300"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-300"
             >
               Home
             </Link>
@@ -33,7 +33,7 @@ const Header = () => {
               to="/search"
               aria-label="Our product"
               title="Our product"
-              class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-300"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-300"
             >
               Search
             </Link>

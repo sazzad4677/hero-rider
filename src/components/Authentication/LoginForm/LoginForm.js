@@ -3,17 +3,33 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import logo from "../../../images/logo.png";
 
+
 const LoginForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (e) => {
+    console.log(e.target.email)
+//     const auth = getAuth();
+// createUserWithEmailAndPassword(auth, e.target, password)
+//   .then((userCredential) => {
+//     // Signed in 
+//     const user = userCredential.user;
+//     // ...
+//   })
+//   .catch((error) => {
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
+//     // ..
+//   });
+
+  };
   return (
-    <div class="min-h-screen bg-yellow-700 flex justify-center items-center">
-      <div class="absolute w-60 h-60 rounded-xl bg-purple-300 -top-5 -left-16 z-0 transform rotate-45 hidden md:block"></div>
-      <div class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
+    <div className="min-h-screen bg-yellow-700 flex justify-center items-center">
+      <div className="absolute w-60 h-60 rounded-xl bg-purple-300 -top-5 -left-16 z-0 transform rotate-45 hidden md:block"></div>
+      <div className="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
         <Link
           to="/"
           className="flex items-center justify-center cursor-pointer mb-3"
@@ -25,10 +41,10 @@ const LoginForm = () => {
         </Link>
 
         <div>
-          <h1 class="text-3xl font-bold text-center mb-4">Welcome Back</h1>
+          <h1 className="text-3xl font-bold text-center mb-4">Welcome Back</h1>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div class="space-y-4">
+          <div className="space-y-4">
             <label className="text-sm font-medium text-gray-900 block mb-0">
               Enter Your Email
             </label>
@@ -69,25 +85,25 @@ const LoginForm = () => {
               </span>
             )}
           </div>
-          <div class="text-center mt-6">
+          <div className="text-center mt-6">
             <button
               type="submit"
-              class="py-3 w-64 text-xl text-white bg-purple-400 rounded-2xl"
+              className="py-3 w-64 text-xl text-white bg-purple-400 rounded-2xl"
             >
               Login
             </button>
-            <p class="mt-4 text-base ">
+            <p className="mt-4 text-base ">
               Don't Have An Account? &nbsp;
               <Link to="/registration">
                 {" "}
-                <span class="underline cursor-pointer">Sign up</span>{" "}
+                <span className="underline cursor-pointer">Sign up</span>{" "}
               </Link>
             </p>
           </div>
         </form>
       </div>
-      <div class="w-40 h-40 absolute bg-purple-300 rounded-full top-0 right-12 hidden md:block"></div>
-      <div class="w-20 h-40 absolute bg-purple-300 rounded-full bottom-20 left-10 transform rotate-45 hidden md:block"></div>
+      <div className="w-40 h-40 absolute bg-purple-300 rounded-full top-0 right-12 hidden md:block"></div>
+      <div className="w-20 h-40 absolute bg-purple-300 rounded-full bottom-20 left-10 transform rotate-45 hidden md:block"></div>
     </div>
   );
 };
