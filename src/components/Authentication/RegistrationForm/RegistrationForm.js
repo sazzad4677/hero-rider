@@ -189,22 +189,25 @@ const RegistrationForm = () => {
             )}
             {/* ============ Area  ============ */}
             {userType === "Rider" && (
-              <React.Fragment>
-                <label className="text-sm font-medium text-gray-900 block mb-0">
-                  Select Your Area
-                </label>
+              <div className="flex flex-col">
                 <select
                   id="area"
                   className="block text-sm py-3 px-4 rounded-lg w-full border outline-none"
                   {...register("area", {
-                    required: true,
+                    required: "Select Your Area",
                   })}
                 >
-                  <option>Mugda</option>
-                  <option>Motijheel</option>
-                  <option>Malibag</option>
+                  <option value="">Select Area</option>
+                  <option value="mugda">Mugda</option>
+                  <option value="motijheel">Motijheel</option>
+                  <option value="malibag">Malibag</option>
                 </select>
-              </React.Fragment>
+                {errors.area && (
+                  <span className="text-red-600 py-3 px-4">
+                    {errors.area.message}
+                  </span>
+                )}
+              </div>
             )}
             {/* ============ Address  ============ */}
             <label className="text-sm font-medium text-gray-900 block mb-0">
@@ -225,7 +228,7 @@ const RegistrationForm = () => {
             )}
             <div className="flex gap-2">
               {/* ============ VehicleType & Fee  ============ */}
-              <div className="flex gap-2">
+              <div className="flex flex-col">
                 <select
                   id="vehicleType"
                   className={`block text-sm py-3 px-4 rounded-lg  border outline-none ${
@@ -243,16 +246,6 @@ const RegistrationForm = () => {
                   <span className="text-red-600 py-3 px-4">
                     {errors.vehicleType.message}
                   </span>
-                )}
-                {userType === "Learner" && (
-                  <p className="block text-sm py-3 px-4 rounded-lg w-full border outline-none">
-                    Fee:
-                    {vehicleType === "Car"
-                      ? "$200"
-                      : vehicleType === "Bike"
-                      ? "$100"
-                      : ""}
-                  </p>
                 )}
               </div>
               {/* ============ Vehicle License Number  ============*/}
@@ -404,17 +397,37 @@ const RegistrationForm = () => {
               </span>
             )}
           </div>
+          <div className="mt-6">
+            {userType === "Learner" && (
+              <div className="flex gap-2">
+                <div className="block text-sm py-3 px-4 rounded-lg w-full border outline-none">
+                  Total Fee: &nbsp;
+                  {vehicleType === "Car"
+                    ? "$200"
+                    : vehicleType === "Bike"
+                    ? "$100"
+                    : ""}
+                </div>
+                <button
+                  type="submit"
+                  className="py-2 w-60 text-xl text-white bg-green-400 rounded-2xl"
+                >
+                  Pay Now
+                </button>
+              </div>
+            )}
+          </div>
           <div className="text-center mt-6">
             <button
               type="submit"
               className="py-3 w-64 text-xl text-white bg-purple-400 rounded-2xl"
             >
-              Login
+              Signup
             </button>
             <p className="mt-4 text-base ">
               Already Have An Account? &nbsp;
               <Link to="/login">
-                <span className="underline cursor-pointer">Sign up</span>
+                <span className="underline cursor-pointer">Sign in</span>
               </Link>
             </p>
           </div>
